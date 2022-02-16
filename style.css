@@ -1,0 +1,297 @@
+body {
+  background-image: url("img/back.jpg");
+  margin: 0px;
+  -webkit-text-size-adjust: 100%;
+  font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+header {
+  background-color: red;
+}
+
+#site-header {
+  background-color: #F5EAD6;
+  background: var(--background-navbar);
+  position: fixed;
+  width: 100%;
+}
+
+#site-header.UpMove {
+  animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+#site-header.DownMove {
+  animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Navbar Container */
+.navtext-container {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  background-color: #F5EAD6;
+
+  text-decoration: none;
+}
+
+.navtext-container ul {
+  width: 370px;
+  list-style: none;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.navtext-container ul li {
+  position: relative;
+  float: left;
+  width: 20%;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.navtext-container a {
+  display: block;
+  text-decoration: none;
+  color: #FD6F75;
+  font-size: 13px;
+}
+
+.navtext-container :hover {
+  color: brown;
+}
+
+
+
+#hwrapper {
+
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.scrolldown4 {
+  position: absolute;
+  bottom: 1%;
+  right: 50%;
+  animation: arrowmove 1s ease-in-out infinite;
+}
+
+@keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+
+  50% {
+    bottom: 3%;
+  }
+
+  100% {
+    bottom: 1%;
+  }
+}
+
+.scrolldown4 span {
+  /*描画位置*/
+  position: absolute;
+  left: -20px;
+  bottom: 10px;
+  /*テキストの形状*/
+  color: red;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+.scrolldown4:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: -6px;
+  /*矢印の形状*/
+  width: 1px;
+  height: 20px;
+  background: red;
+  transform: skewX(-31deg);
+}
+
+.scrolldown4:after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*矢印の形状*/
+  width: 1px;
+  height: 50px;
+  background: red;
+}
+
+.container {
+  margin: auto;
+  padding: 10px;
+}
+
+#work {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#work_title_pic {
+  width: 30%;
+  margin: auto;
+  display: block;
+  margin-top: 8%;
+}
+
+#works {
+
+  background-color: #B7CDD8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 65%;
+  margin: auto;
+  margin-bottom: 10%;
+  margin-top: 12%;
+  border-radius: 20px;
+}
+
+#content_ {
+  background-color: #B7CDD8;
+  width: 65%;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 20px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+#content_pic {
+  width: 60%;
+  margin-bottom: 5%;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+article {
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 28%;
+}
+
+article img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 4px 6px rgba(34, 43, 51, .16);
+}
+
+
+.content {
+  background-color: cornflowerblue;
+  color: crimson;
+  border-radius: 14px;
+}
+
+
+#pro {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#prof_title_pic {
+  width: 30%;
+  display: block;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 8%;
+}
+
+
+.prof-content {
+  width: 60%;
+  padding: 20px;
+  margin: auto;
+  background-color: #FCC1C3;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+
+}
+
+
+#prof_pic {
+  padding-top: 10%;
+  width: 30%;
+  display: block;
+  margin: auto;
+  padding-bottom: 4%;
+}
+
+#prof_detail {
+
+  text-align: center;
+}
+
+.fwrapper {
+  margin-top: 10%;
+}
+
+
+#copy {
+  width: 100vw;
+  background-color: #F5EAD6;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #FD6F75;
+  font-weight: bold;
+}
