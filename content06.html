@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet"></a>
+    <title>my portforio site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+    <section class="container">
+
+        <section id="work">
+            <div id="content_">
+                <h1>波紋のインタラクション</h1>
+
+
+                <div id="content_ex">
+                    <p>↓クリックすると波紋が広がります。↓</p>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </section>
+
+    <div class="fwrapper">
+
+        <div id="copy">©Sasaki Nanaka</div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script>
+        // JavaScriptはここに書く
+
+        // Strictモード
+        "use strict";
+
+        // 配列を宣言する
+        let ripples = [];
+
+        function setup() {
+            createCanvas(windowWidth, 500);
+        }
+
+        function draw() {
+            background(255, 255, 255);
+
+            // 繰り返しでオブジェクトの配列を使って円を描く
+            for (let i = 0; i < ripples.length; i++) {
+                ripples[i].update();
+                ripples[i].draw();
+
+                // 波紋のオブジェクトの透明度aｶﾞ0よりも小さくなったら
+                if (ripples[i].a <= 0) {
+                    // インデックスと削除する要素の数を指定して、要素を削除する
+                    ripples.splice(i, 1);
+                }
+            }
+        }
+
+        // マウスが押されたとき実行される
+        function mousePressed() {
+            ripples.push(generateRipple());
+        }
+
+        // オブジェクトを作成する関数
+        function generateRipple() {
+            // 変数名 ripple でオブジェクトを定義
+            let ripple = {
+                x: mouseX,
+                y: mouseY,
+                size: 0,
+                a: 255,
+                draw: function () {
+                    noFill();
+                    stroke(0, 127, 255, this.a);
+                    ellipse(this.x, this.y, this.size, this.size);
+                },
+                update: function () {
+                    this.size = this.size + 3;
+                    this.a = this.a - 2;
+                }
+            }
+
+            return ripple; // 戻り値を使ってオブジェクトを返す
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+
+</body>
+
+</html>
