@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet"></a>
+    <title>my portforio site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+    <header id="site-header">
+        <nav class="navtext-container">
+            <ul id="g-navi">
+                <li><a href="#hwrapper">home</a></li>
+                <li><a href="#works">works</a></li>
+                <li><a href="#profile">profile</a></li>
+            </ul>
+        </nav>
+        </nav>
+    </header>
+
+
+
+    <div id="hwrapper">
+        <img src="img/home_.jpg" alt="" id="home_pic">
+        <div class="scrolldown4"><span>Scroll</span></div>
+    </div>
+
+    </div>
+
+    </section>
+
+    <div id="page_top"><a href="#"></a></div>
+
+    <section class="container">
+
+        <section id="work">
+            <div id="work_title">
+                <img src="img/work4.png" alt="title" id="work_title_pic">
+            </div>
+            <div id="works">
+                <article>
+                    <div class="content">
+                        <a href="content01.html"><img src="img/tensi1.png" alt="" class="content-img"></a>
+                    </div>
+
+                    <p>天使ちゃんと帰宅</p>
+                </article>
+                <article>
+                    <div class="content">
+                        <a href="content02.html"><img src="img/スクリーンショット (77).png" alt="" class="content-img"></a>
+                    </div>
+
+                    <p>本検索アプリ</p>
+                </article>
+                <article>
+                    <div class="content">
+                        <a href="content03.html"><img src="img/スクリーンショット (83).png" alt="" class="content-img"></a>
+                    </div>
+
+                    <p>Webメモアプリ</p>
+                </article>
+                <article>
+                    <div class="content">
+                        <a href="content04.html"><img src="img/スクリーンショット (79).png" alt="" class="content-img"></a>
+                    </div>
+
+                    <p>おみくじ</p>
+                </article>
+                <article>
+                    <div class="content">
+                        <a href="content05.html"><img src="img/スクリーンショット (81).png" alt="" class="content-img"></a>
+                    </div>
+
+                    <p>今日のごはん</p>
+                </article>
+                <article>
+                    <div class="content">
+                        <a href="content06.html"><img src="img/スクリーンショット (87).png" alt="" class="content-img"></a>
+                    </div>
+
+                    <p>インタラクション</p>
+                </article>
+
+            </div>
+            </div>
+
+        </section>
+
+        <section id="profile">
+            <div id="prof_title">
+                <img src="img/prof3.png" alt="title" id="prof_title_pic">
+            </div>
+            <div class="prof-content">
+                <div id="prof_pic_box">
+                    <img src="img/prof.jpg" id="prof_pic">
+                </div>
+
+                <div id="prof_detail">
+                    <p class="name">ササキ　ナナカ</p>
+                    <p id="belong">情報デザイン専攻　大学二年生</p>
+                    <p class="coment">カワイイとものづくりが好きです。<br>
+                        カワイイ大使になりたい。
+                    </p>
+                </div>
+        </section>
+
+
+
+
+    </section>
+
+    <div class="fwrapper">
+
+        <div id="copy">©Sasaki Nanaka</div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+        var beforePos = 0;//スクロールの値
+
+        function ScrollAnime() {
+            var elemTop = $('#work').offset().top;
+            var scroll = $(window).scrollTop();
+            //ヘッダーの出し入れをする
+            if (scroll == beforePos) {
+                //IE11対策で処理を入れない
+            } else if (elemTop > scroll || 0 > scroll - beforePos) {
+                //ヘッダーが上から出現する
+                $('#site-header').removeClass('UpMove');
+                $('#site-header').addClass('DownMove');
+            } else {
+                //ヘッダーが上に消える
+                $('#site-header').removeClass('DownMove');
+                $('#site-header').addClass('UpMove');
+            }
+
+            beforePos = scroll;
+        }
+
+        $(window).scroll(function () {
+            ScrollAnime();//スクロール途中でヘッダーが消え、上にスクロールすると復活する関数を呼ぶ
+        });
+
+        // ページが読み込まれたらすぐに動かしたい場合の記述
+        $(window).on('load', function () {
+            ScrollAnime();//スクロール途中でヘッダーが消え、上にスクロールすると復活する関数を呼ぶ
+        });
+
+
+        var headerH = $("#site-header").outerHeight(true);//headerの高さを取得    
+        $('#g-navi li a').click(function () {
+            var elmHash = $(this).attr('href');
+            var pos = $(elmHash).offset().top - headerH;//header分の高さを引いた高さまでスクロール
+            $('body,html').animate({ scrollTop: pos }, 1000);
+            return false;
+        });
+
+    </script>
+
+</body>
+
+</html>
